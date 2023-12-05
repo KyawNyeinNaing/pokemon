@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@layer utilities {
+  .bg-bottom-fixed {
+    @apply bg-gradient-to-b from-[#f8f8f800] to-white;
+  }
+
+  .search-wrap {
+    @apply relative w-[177px] h-[35px] bg-white rounded-tl-full rounded-bl-full;
+  }
+
+  .search-input {
+    @apply absolute top-0 left-0 w-full h-full bg-transparent outline-none pl-5 text-gray-600;
+  }
+
+  /* extends custom css */
+  .overflow-initial {
+    overflow: initial;
+  }
+}
